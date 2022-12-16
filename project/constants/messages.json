@@ -1,0 +1,18 @@
+{
+    "login": {
+        "isRequired": "Login is required",
+        "incorrect": "Login is incorrect"
+    },
+    "email": {
+        "isRequired": "Email is required",
+        "incorrect": "Email is incorrect"
+    },
+    "password": {
+        "isRequired": "Password is required",
+        "incorrect": "The password must contain: symbols, uppercase and lowercase letters, numbers. Password length must be at least 6 characters"
+    },
+    "confipassword": {
+        "isRequired": "Password is required",
+        "incorrect": "The password must contain: symbols, uppercase and lowercase letters, numbers. Password length must be at least 6 characters"
+    }
+}
