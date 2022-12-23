@@ -2,7 +2,7 @@ import { test, expect } from "../fixtures";
 import messages from "../constants/messages.json"
 
 test.describe('Registration form', async () => {
-
+    let defaultPassword = "Password123$"
     test.beforeEach(async ({ registrationPage, page }) => {
         await page.goto(registrationPage.url);
     })
@@ -12,7 +12,6 @@ test.describe('Registration form', async () => {
         expect.soft(await page.textContent(registrationPage.selectors.login + registrationPage.selectors.error)).toBe(messages.login.isRequired)
         expect.soft(await page.textContent(registrationPage.selectors.email + registrationPage.selectors.error)).toBe(messages.email.isRequired)
         expect.soft(await page.textContent(registrationPage.selectors.password + registrationPage.selectors.error)).toBe(messages.password.isRequired)
-        expect.soft(await page.textContent(registrationPage.selectors.confirmPassword + registrationPage.selectors.error)).toBe(messages.confipassword.isRequired)
     })
 
     Array(
@@ -26,7 +25,7 @@ test.describe('Registration form', async () => {
         "login123"
     ).forEach(value => {
         test(`Login is correct. Value: ${value}`, async ({ page, registrationPage, alert }) => {
-            await registrationIsSuccess(page, alert, registrationPage, value, "test@mail.ru", "Password123")
+            await registrationIsSuccess(page, alert, registrationPage, value, "test@mail.ru", defaultPassword)
         })
     })
 
@@ -40,7 +39,7 @@ test.describe('Registration form', async () => {
         "qwe.qwe@mail.ru"
     ).forEach(email => {
         test(`Email is correct. element: ${email}`, async ({ page, registrationPage, alert }) =>
-            await registrationIsSuccess(page, alert, registrationPage, "Login", email, "Password123")
+            await registrationIsSuccess(page, alert, registrationPage, "Login", email, defaultPassword)
         )
     })
 })
