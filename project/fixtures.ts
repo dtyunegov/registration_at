@@ -1,7 +1,7 @@
 // my-test.ts
 import { test as base } from '@playwright/test';
 import AlertBlock from './pages/blocks/alert.block';
-import RegistrationPage from '../project/pages/Registration.page';
+import RegistrationPage from '../project/pages/registration.page';
 
 type Fixtures = {
     registrationPage: RegistrationPage;
